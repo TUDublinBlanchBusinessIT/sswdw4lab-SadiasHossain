@@ -18,8 +18,12 @@ $conn = mysqli_connect($servername, $username, $password, $dbname, $port);
 if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
+$X = $_POST['firstName'];
+$Y = $_POST['lastName'];
 
-$sql = "INSERT INTO member (firstname, surname) VALUES ('john', 'doe')";
+echo "Hello " . $X . " " . $Y;
+
+$sql = "INSERT INTO member (firstname, surname) VALUES ('$X', '$Y')";
 
 mysqli_query($conn, $sql);
 
